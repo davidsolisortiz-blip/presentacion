@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Godzilla - El Rey de los Monstruos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Navegación */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      border-bottom: 3px solid #1a7a1a;
+      z-index: 1000;
+      padding: 12px 0;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      list-style: none;
+      gap: 8px 25px;
+    }
+
+    nav a {
+      color: #a0e0a0;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+
+    nav a:hover {
+      background: #1a7a1a;
+      color: #fff;
+    }
+
+    /* Secciones */
+    section {
+      min-height: 100vh;
+      padding: 100px 20px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .container.reverse {
+      direction: rtl;
+    }
+
+    .container.reverse > * {
+      direction: ltr;
+    }
+
+    .text-content h2 {
+      font-size: 2.4rem;
+      color: #4caf50;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px rgba(76, 175, 80, 0.4);
+    }
+
+    .text-content p {
+      font-size: 1.15rem;
+      margin-bottom: 15px;
+      color: #ccc;
+    }
+
+    .text-content ul {
+      margin-left: 20px;
+      margin-top: 15px;
+    }
+
+    .text-content li {
+      margin-bottom: 8px;
+      color: #bbb;
+    }
+
+    .image-content img {
+      width: 100%;
+      max-height: 450px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 3px solid #1a7a1a;
+      box-shadow: 0 0 25px rgba(26, 122, 26, 0.5);
+      transition: transform 0.4s;
+      background: #1a1a1a;
+    }
+
+    .image-content img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Portada */
+    #inicio {
+      /* Cambia esta imagen de fondo si quieres */
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+                  url('imagen-portada.jpg') center/cover no-repeat;
+      background-color: #111;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    #inicio h1 {
+      font-size: 4rem;
+      color: #4caf50;
+      text-shadow: 0 0 20px #1a7a1a, 0 0 40px #000;
+      margin-bottom: 15px;
+      letter-spacing: 4px;
+    }
+
+    #inicio p.subtitle {
+      font-size: 1.6rem;
+      color: #a0e0a0;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 35px;
+      background: #1a7a1a;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      border: 2px solid #4caf50;
+    }
+
+    .btn:hover {
+      background: #4caf50;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+    }
+
+    /* Fondos de las secciones */
+    #origen { background: #0d0d0d; }
+    #filmografia { background: #111; }
+    #poderes { background: #0d0d0d; }
+    #legado { background: #111; }
+
+    /* Footer */
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 25px;
+      border-top: 2px solid #1a7a1a;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .container.reverse {
+        direction: ltr;
+      }
+      #inicio h1 {
+        font-size: 2.8rem;
+      }
+      nav ul {
+        gap: 5px 15px;
+      }
+      nav a {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navegación -->
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#origen">Origen</a></li>
+      <li><a href="#filmografia">Películas</a></li>
+      <li><a href="#poderes">Poderes</a></li>
+      <li><a href="#legado">Legado</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== SECCIÓN 1: PORTADA ===================== -->
+  <section id="inicio">
+    <h1>GODZILLA</h1>
+    <p class="subtitle">El Rey de los Monstruos</p>
+    <a href="#origen" class="btn">Explorar</a>
+  </section>
+
+  <!-- ===================== SECCIÓN 2: ORIGEN ===================== -->
+  <section id="origen">
+    <div class="container">
+      <div class="text-content">
+        <h2>Origen e Historia</h2>
+        <p>Godzilla nació en 1954 de la mano del director Ishirō Honda y los efectos especiales de Eiji Tsuburaya para el estudio Toho.</p>
+        <p>Su creación fue una respuesta directa a los horrores de la era nuclear: las bombas de Hiroshima y Nagasaki, y el incidente del barco pesquero Lucky Dragon 5 en 1954.</p>
+        <p>El nombre original japonés es <strong>Gojira</strong> (ゴジラ), una combinación de “gorira” (gorila) y “kujira” (ballena).</p>
+      </div>
+      <div class="image-content">
+        <!-- PON AQUÍ TU IMAGEN 1 -->
+        <img src="images/ORIGEN GODZILA.jpg" alt="Godzilla - Origen">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECCIÓN 3: FILMOGRAFÍA ===================== -->
+  <section id="filmografia">
+    <div class="container reverse">
+      <div class="text-content">
+        <h2>Filmografía</h2>
+        <p>Desde 1954, Godzilla ha protagonizado más de 35 películas japonesas y varias producciones hollywoodenses.</p>
+        <ul>
+          <li><strong>Showa Era</strong> (1954-1975): Clásicos con trajes y luchas espectaculares</li>
+          <li><strong>Heisei Era</strong> (1984-1995): Diseño más oscuro y realista</li>
+          <li><strong>Millennium Series</strong> (1999-2004)</li>
+          <li><strong>MonsterVerse</strong> (2014-presente): Godzilla moderno de Legendary</li>
+          <li><strong>Godzilla Minus One</strong> (2023): Regreso aclamado a las raíces</li>
+        </ul>
+      </div>
+      <div class="image-content">
+        <!-- PON AQUÍ TU IMAGEN 2 -->
+        <img src="images/power goji.jpg" alt="Godzilla - Filmografía">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECCIÓN 4: PODERES ===================== -->
+  <section id="poderes">
+    <div class="container">
+      <div class="text-content">
+        <h2>Características y Poderes</h2>
+        <p>Godzilla es un kaiju (monstruo gigante) anfibio de origen prehistórico mutado por la radiación.</p>
+        <ul>
+          <li><strong>Aliento atómico</strong>: Rayo de energía azul/roja devastador</li>
+          <li><strong>Regeneración</strong>: Capacidad de curarse de heridas graves</li>
+          <li><strong>Fuerza sobrehumana</strong>: Puede levantar y lanzar otros kaiju</li>
+          <li><strong>Resistencia extrema</strong>: Sobrevive a armas nucleares y ataques masivos</li>
+          <li><strong>Tamaño</strong>: Desde 50 metros (1954) hasta más de 120 metros en versiones modernas</li>
+        </ul>
+      </div>
+      <div class="image-content">
+        <!-- PON AQUÍ TU IMAGEN 3 -->
+        <img src=" images/goji movies.jpg" alt="Godzilla - Poderes">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECCIÓN 5: LEGADO ===================== -->
+  <section id="legado">
+    <div class="container reverse">
+      <div class="text-content">
+        <h2>Impacto Cultural</h2>
+        <p>Godzilla es mucho más que un monstruo: es un ícono global de la cultura pop y un símbolo de los peligros de la tecnología nuclear.</p>
+        <p>Ha inspirado videojuegos, cómics, series de televisión, merchandising y ha influido en generaciones de cineastas.</p>
+        <p>En Japón se le considera un “héroe antihéroe” que a veces protege al planeta de peores amenazas.</p>
+        <p style="margin-top: 25px; color: #4caf50; font-weight: bold;">
+          ¡El Rey de los Monstruos sigue vivo después de más de 70 años!
+        </p>
+      </div>
+      <div class="image-content">
+        <!-- PON AQUÍ TU IMAGEN 4 -->
+        <img src="images/legacyy monsters.jpg" alt="Godzilla - Legado">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Presentación sobre Godzilla • Hecha con 💚
+  </footer>
+
+</body>
+</html>
